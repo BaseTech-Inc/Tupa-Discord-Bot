@@ -33,6 +33,8 @@ $ git clone https://github.com/BaseTech-Inc/Tupa-Discord-Bot.git
     ```env
     BOTTOKEN=YOUR_BOT_TOKEN
     CLIENTID=CLIENT_ID
+    EMAIL_SERVER=EMAIL_SERVER
+    PASSWORD_SERVER=PASSWORD_SERVER
     ```
 
 ### Usando projeto
