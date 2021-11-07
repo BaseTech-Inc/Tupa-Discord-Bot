@@ -1,12 +1,13 @@
 'use strict'
 
 import fetch from 'node-fetch'
+import { baseUrl } from '../common/common.js'
+import Authenticate from '../services/AccountService.js'
 
 export default (() => {   
-
-    const baseUrl = 'https://tupaserver.azurewebsites.net/api/v1/Localidades'
-
     const processLocalidades = async (pais, estado, cidade, bairro) => {
+        let bearerToken = await Authenticate.getBearerToken()
+
         const options = {
             method: 'get',
             headers: {
@@ -14,10 +15,10 @@ export default (() => {
             }
         }
 
-        let url = baseUrl + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }`
+        let url = baseUrl + 'api/v1/Localidades' + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }`
 
-        const response = await fetch(url, options);
-        const json = await response.json();
+        const response = await fetch(url, options)
+        const json = await response.json()
 
         return json
     }
