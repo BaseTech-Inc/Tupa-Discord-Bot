@@ -1,6 +1,6 @@
 'use strict'
 
-const help = (() => {   
+export default (() => {   
 
     const message = async (msg, args) => {
         const sequelize = require('../../database/connection')
@@ -84,5 +84,3 @@ const help = (() => {
     }
     
 })()
-
-module.exports = help

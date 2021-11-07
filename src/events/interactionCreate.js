@@ -1,10 +1,10 @@
 'use strict'
 
-const interactionCreate = (() => {
+import AllCommands from '../common/AllCommands.js'
 
-    let callCommands = async (interaction) => {
-        const AllCommands = require('../common/AllCommands')
-            
+export default (() => {
+
+    let callCommands = async (interaction) => {            
         let listCommands = await AllCommands.AllCommandsWithPath()
 
         if (!interaction.isCommand()) return
@@ -36,5 +36,3 @@ const interactionCreate = (() => {
     }
 
 })()
-
-module.exports = interactionCreate

@@ -1,11 +1,15 @@
-(async () => {
+import dotenv from 'dotenv'
+import { REST } from '@discordjs/rest'
+import { Routes } from 'discord-api-types/v9'
+import AllCommands from './common/AllCommands.js'
 
-    const { REST } = require('@discordjs/rest')
-    const { Routes } = require('discord-api-types/v9')
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+
+export default async () => {
     const { SlashCommandBuilder } = require('@discordjs/builders')
-    const AllCommands = require('./common/AllCommands')
 
-    require('dotenv/config')
+    dotenv.config()
 
     const rest = new REST({ version: '9' }).setToken(process.env.BOTTOKEN)
 
@@ -18,6 +22,7 @@
         let commands = []
 
         listCommands.forEach(current => {
+
             let builder = new SlashCommandBuilder()
                 .setName(current.help().usage)
                 .setDescription(current.help().description)
@@ -50,7 +55,9 @@
 
         commands.map(command => command.toJSON())
         rest.put(
-            Routes.applicationCommands(process.env.CLIENTID), { body: commands })
+            /*Routes.applicationCommands(process.env.CLIENTID), { body: commands }*/
+            Routes.applicationGuildCommands(process.env.CLIENTID, '798068715139891221'), { body: commands }
+            )
         .then(() => console.log('Successfully reloaded application (/) commands.'))
         .catch(console.error)
 
@@ -60,4 +67,4 @@
 
     }
 
-})()
+}

@@ -8,10 +8,9 @@
  * );
  */
 
-const Sequelize = require('sequelize')
-const { prefix } = require('../../common/common')
+import Sequelize from 'sequelize'
 
-module.exports = function createTable(sequelize) {
+export function createTable(sequelize) {
 	return sequelize.define('tags', {
 		name: {
 			type: Sequelize.STRING,
@@ -27,7 +26,7 @@ module.exports = function createTable(sequelize) {
 	})
 }
 
-module.exports = {
+export default {
 	/*
 	* equivalent to: 
 	* CREATE TABLE prefix(

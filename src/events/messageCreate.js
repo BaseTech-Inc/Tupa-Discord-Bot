@@ -1,11 +1,11 @@
 'use strict'
 
-const messageCreate = (() => {
+import AllCommands from '../common/AllCommands.js'
+import { prefix } from '../common/common.js'
+
+export default (() => {
 
     let callCommands = async (msg) => {
-        const { prefix } = require('../common/common')
-        const AllCommands = require('../common/AllCommands')
-
         let tokens = msg.content.split(' ')
         let command = tokens.shift()
     
@@ -28,5 +28,3 @@ const messageCreate = (() => {
     }
 
 })()
-
-module.exports = messageCreate

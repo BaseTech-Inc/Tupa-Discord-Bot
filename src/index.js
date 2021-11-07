@@ -1,6 +1,18 @@
+import { Client, Intents } from 'discord.js'
+import dotenv from 'dotenv'
+import deployCommands from './deployCommands.js'
+
+// connection database
+import sequelize from './database/connection.js'
+import Prefix from './database/migrations/00_create_prefix.js'
+
+// events
+import interactionCreate from './events/interactionCreate.js'
+import messageCreate from './events/messageCreate.js'
+import guildMemberAdd from './events/guildMemberAdd.js'
+import guildMemberRemove from './events/guildMemberRemove.js'
+
 (async () => {
-    
-    const { Client, Intents } = require('discord.js')
     const client = new Client({ intents: [
         Intents.FLAGS.GUILDS, 
         Intents.FLAGS.GUILD_MESSAGES, 
@@ -8,20 +20,10 @@
     ] })
 
     // environment variables set in the .env file
-    require('dotenv/config')
+    dotenv.config()
 
     // create slash commands
-    require('./deployCommands')
-
-    // connection database
-    const sequelize = require('./database/connection')
-    const Prefix = require('./database/migrations/00_create_prefix')
-
-    // events
-    const interactionCreate = require('./events/interactionCreate')
-    const messageCreate = require('./events/messageCreate')
-    const guildMemberAdd = require('./events/guildMemberAdd')
-    const guildMemberRemove = require('./events/guildMemberRemove')
+    await deployCommands()
 
     client.on('warn', info => console.log(info))
     client.on('error', error => console.error(error))

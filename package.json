@@ -20,5 +20,6 @@
   },
   "engines": {
     "node": "16.x"
-  }
+  },
+  "type": "module"
 }

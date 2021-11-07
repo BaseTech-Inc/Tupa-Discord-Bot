@@ -1,11 +1,9 @@
 'use strict'
 
-const guildMemberAdd = (member) => {
+export default (member) => {
 
     console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` )
 
     // member.user.send("")
     
 }
-
-module.exports = guildMemberAdd

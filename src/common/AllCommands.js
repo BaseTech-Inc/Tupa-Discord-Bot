@@ -1,9 +1,21 @@
 'use strict'
 
-const getAllCommands = (() => {
+import { createRequire } from 'module'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import url from 'url'
 
-    let include = (path) => {
-        return require(__dirname + '/..' + path);
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const require = createRequire(import.meta.url)
+
+export default (() => {
+
+    let include = async (pathRoute) => {
+        let urlRoute = __dirname + '/..' + pathRoute
+
+        let obj = await import(url.pathToFileURL(urlRoute))
+
+        return obj.default
     }  
 
     const AllCommandsWithPath = async () => {
@@ -17,7 +29,7 @@ const getAllCommands = (() => {
 
         for (const folder of folders) {
             requiresCommands.push(
-                include(`/${folderName}/${folder}/${folder}.js`)
+                await include(`/${folderName}/${folder}/${folder}.js`)
             )
         }
 
@@ -29,5 +41,3 @@ const getAllCommands = (() => {
     }
 
 })()
-
-module.exports = getAllCommands

@@ -1,6 +1,6 @@
 'use strict'
 
-const ping = (() => {   
+export default (() => {   
 
     let message = async (msg) => {
         return { content: 'Pong!' }
@@ -21,5 +21,3 @@ const ping = (() => {
     }
     
 })()
-
-module.exports = ping 

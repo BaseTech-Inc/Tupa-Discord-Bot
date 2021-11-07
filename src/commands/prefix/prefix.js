@@ -1,6 +1,6 @@
 'use strict'
 
-const prefix = (() => {   
+export default (() => {   
 
     const message = async (msg, args) => {
         const sequelize = require('../../database/connection')
@@ -53,5 +53,3 @@ const prefix = (() => {
     }
     
 })()
-
-module.exports = prefix
