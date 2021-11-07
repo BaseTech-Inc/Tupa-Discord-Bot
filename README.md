@@ -72,4 +72,4 @@ $ npm start
 
 ## Licença
 
-Esse projeto está sob licença. Veja o arquivo [`LICENÇA`](https://github.com/BaseTech-Inc/Tupa-Web/blob/master/LICENSE) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [`LICENÇA`](https://github.com/BaseTech-Inc/Tupa-Discord-Bot/blob/master/LICENSE) para mais detalhes.
