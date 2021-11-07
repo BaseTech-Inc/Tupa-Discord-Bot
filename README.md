@@ -1,27 +1,26 @@
-## 💻 Sobre o projeto
+<div align="center">
+<img align="center" width="24%" src="./.github/logo.png" />
+<br>
+<i>
+    Discord Bot da empresa Tupã
+</i>
+</div>
 
-🤖 Discord-bot - teste da API do Discord usando o Discord.js v13.
+## Ajustes e melhorias
 
-## :computer: Tecnologias
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-Este projeto foi realizado usando as seguintes tecnologias:
+## Começando
 
-<ul>
-  <li><a href="https://nodejs.org/en/docs/">NodeJs</a></li>
-  <li><a href="https://www.javascript.com/">JavaScript</a></li>
-  <li><a href="https://discord.js.org/">Discord.js</a></li>
-</ul>
-
-## :construction_worker: Como rodar o projeto
-
-### :computer: Baixando o projeto
+### Instalando localmente projeto
 
 ```bash
 # Clone o repositório em sua máquina
-$ git clone https://github.com/guilhermeivo/discord-bot.git
+$ git clone https://github.com/BaseTech-Inc/Tupa-Discord-Bot.git
 ```
 
-### :wrench: Configurando o ambiente
+### Configurando ambiente
+
 
 - Para este projeto é necessário ter instalado em sua maquina o <a href="https://nodejs.org/en/">NodeJs</a>.
 
@@ -36,9 +35,9 @@ $ git clone https://github.com/guilhermeivo/discord-bot.git
     CLIENTID=CLIENT_ID
     ```
 
-### :computer: Rodando o projeto
+<img src="https://github.githubassets.com/images/mona-whisper.gif" align="right" />
 
-#### Projeto
+### Usando projeto
 
 ```bash
 # Vá para a pasta do projeto
@@ -70,3 +69,7 @@ $ npm start
         - `interactionCreate.js`
         - `ready.js`
     - `index.js`
+
+## Licença
+
+Esse projeto está sob licença. Veja o arquivo [`LICENÇA`](https://github.com/BaseTech-Inc/Tupa-Web/blob/master/LICENSE) para mais detalhes.
