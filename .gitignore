@@ -1,0 +1,4 @@
+src/database/database.sqlite
+
+.env
+node_modules/**/*
