@@ -1,11 +1,11 @@
 'use strict'
 
+import sequelize from '../../database/connection.js'
+import { table, insert, get, edit } from '../../database/migrations/00_create_prefix.js'
+
 export default (() => {   
 
     const message = async (msg, args) => {
-        const sequelize = require('../../database/connection')
-        const { table, insert, get, edit } = require('../../database/migrations/00_create_prefix')
-
         let guildId = msg.guildId
 
         if (args.length > 0) {

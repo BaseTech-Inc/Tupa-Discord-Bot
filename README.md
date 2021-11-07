@@ -35,8 +35,6 @@ $ git clone https://github.com/BaseTech-Inc/Tupa-Discord-Bot.git
     CLIENTID=CLIENT_ID
     ```
 
-<img src="https://github.githubassets.com/images/mona-whisper.gif" align="right" />
-
 ### Usando projeto
 
 ```bash
@@ -69,6 +67,8 @@ $ npm start
         - `interactionCreate.js`
         - `ready.js`
     - `index.js`
+
+<img src="https://github.githubassets.com/images/mona-whisper.gif" align="right" />
 
 ## Licença
 

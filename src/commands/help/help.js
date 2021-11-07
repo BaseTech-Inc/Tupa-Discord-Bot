@@ -1,14 +1,14 @@
 'use strict'
 
+import sequelize from '../../database/connection.js'
+import { prefix } from '../../common/common.js'
+import AllCommands from '../../common/AllCommands.js'
+import { MessageEmbed } from 'discord.js'
+import { table, get } from '../../database/migrations/00_create_prefix.js'
+
 export default (() => {   
 
     const message = async (msg, args) => {
-        const sequelize = require('../../database/connection')
-        const { prefix } = require('../../common/common.js')
-        const AllCommands = require('../../common/AllCommands')
-        const { MessageEmbed } = require('discord.js')
-        const { table, get } = require('../../database/migrations/00_create_prefix')
-
         let prefixUse = prefix
         let guildId = msg.guildId
         let existPrefix = await get(table(sequelize), guildId)

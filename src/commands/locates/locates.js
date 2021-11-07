@@ -1,10 +1,10 @@
 'use strict'
 
-export default  (() => {   
+import LocalidadesService from '../../services/LocalidadesService.js'
+
+export default (() => {   
 
     let message = async (msg, args) => {
-        const LocalidadesService = require('../../services/LocalidadesService')
-
         if (args.length > 0) {
             if (typeof args[0] === 'object') {
                 args.map((arg, index) => args[index] = arg.value)

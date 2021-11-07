@@ -2,6 +2,8 @@
 
 import AllCommands from '../common/AllCommands.js'
 import { prefix } from '../common/common.js'
+import sequelize from '../database/connection.js'
+import { table, get } from '../database/migrations/00_create_prefix.js'
 
 export default (() => {
 
@@ -9,7 +11,15 @@ export default (() => {
         let tokens = msg.content.split(' ')
         let command = tokens.shift()
     
-        if (command.charAt(0) === prefix) {
+        let prefixUse = prefix
+        let guildId = msg.guildId
+        let existPrefix = await get(table(sequelize), guildId)
+
+        if (existPrefix != null) {
+            prefixUse = existPrefix.letter
+        }
+
+        if (command.charAt(0) === prefixUse) {
             command = command.substring(1)
             
             let listCommands = await AllCommands.AllCommandsWithPath()

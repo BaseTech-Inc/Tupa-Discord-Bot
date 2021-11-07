@@ -4,7 +4,7 @@ import deployCommands from './deployCommands.js'
 
 // connection database
 import sequelize from './database/connection.js'
-import Prefix from './database/migrations/00_create_prefix.js'
+import { table as PrefixTable } from './database/migrations/00_create_prefix.js'
 
 // events
 import interactionCreate from './events/interactionCreate.js'
@@ -30,7 +30,7 @@ import guildMemberRemove from './events/guildMemberRemove.js'
 
     client.on('ready', () => {
         // create tables in sequelize
-        Prefix.table(sequelize).sync()
+        PrefixTable(sequelize).sync()
 
         console.log(`${ client.user.tag } ready!`)
     })
