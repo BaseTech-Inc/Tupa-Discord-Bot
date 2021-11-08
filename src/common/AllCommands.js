@@ -35,9 +35,34 @@ export default (() => {
 
         return requiresCommands
     }
+
+    const AllButtonsWithPath = async () => {
+        const fs = require('fs').promises
+
+        let requiresButtons = []
+
+        const folderName = 'commands'
+
+        const folders = await fs.readdir(`./src/${folderName}`)
+
+        for (const folder of folders) {
+            let files = await fs.readdir(`./src/${folderName}/${folder}`)
+
+            for (const file of files) {
+                if (file.includes('Button') || file.includes('Btn')) {
+                    requiresButtons.push(
+                        await include(`/${folderName}/${folder}/${file}`)
+                    )
+                }
+            }
+        }
+
+        return requiresButtons
+    }
     
     return {
-        AllCommandsWithPath
+        AllCommandsWithPath,
+        AllButtonsWithPath
     }
 
 })()

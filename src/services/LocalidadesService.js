@@ -5,7 +5,7 @@ import { baseUrl } from '../common/common.js'
 import Authenticate from '../services/AccountService.js'
 
 export default (() => {   
-    const processLocalidades = async (pais, estado, cidade, bairro) => {
+    const processLocalidades = async (pais, estado, cidade, bairro, pageNumber = 1) => {
         let bearerToken = await Authenticate.getBearerToken()
 
         const options = {
@@ -15,7 +15,7 @@ export default (() => {
             }
         }
 
-        let url = baseUrl + 'api/v1/Localidades/pagination' + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }&PageSize=6`
+        let url = baseUrl + 'api/v1/Localidades/pagination' + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }&PageNumber=${ pageNumber }&PageSize=6`
 
         const response = await fetch(url, options)
         const json = await response.json()

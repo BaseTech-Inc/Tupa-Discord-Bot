@@ -26,8 +26,10 @@ export default (() => {
 
             listCommands.forEach(current => {
                 if (command === current.help().usage) {
-                    current.message(msg, tokens)
-                        .then(message => msg.channel.send(message))
+                    /*current.message(msg, tokens)
+                        .then(message => msg.channel.send(message))*/
+
+                    msg.channel.send({ content: 'Temporariamente desativado.'})
                 }
             })
         }

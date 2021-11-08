@@ -4,10 +4,10 @@ import AllCommands from '../common/AllCommands.js'
 
 export default (() => {
 
-    let callCommands = async (interaction) => {            
-        let listCommands = await AllCommands.AllCommandsWithPath()
-
+    let callMessages = async (interaction) => {     
         if (!interaction.isCommand()) return
+
+        let listCommands = await AllCommands.AllCommandsWithPath()
 
         listCommands.forEach(current => {
             if (interaction.commandName === current.help().usage) {
@@ -26,13 +26,15 @@ export default (() => {
                 }
 
                 current.message(interaction, args)
-                    .then(message => interaction.reply(message))
+                    .then(async message => {
+                        
+                    })                
             }
         })
     }
     
     return {
-        callCommands
+        callMessages
     }
 
 })()

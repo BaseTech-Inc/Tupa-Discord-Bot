@@ -6,9 +6,49 @@ import { MessageActionRow, MessageButton, MessageEmbed } from 'discord.js'
 
 export default (() => {   
 
+    const getTemplateEmbed = () => {
+        return new MessageEmbed()
+            .setColor('#2484f3')
+            .setTitle('Lista de localidades')
+            .setURL('http://tupaweb.azurewebsites.net/')
+            .setDescription('Aqui está a lista de alguns lugares com esse nomes. 😊')
+            .setTimestamp()
+    }
+
+    const getButtons = (hasPreviousPage, hasNextPage) => {
+        return new MessageActionRow().addComponents(
+            new MessageButton()
+                .setCustomId('previousPage')
+                .setLabel('Página anterior')
+                .setStyle('SECONDARY')
+                .setDisabled(!hasPreviousPage),
+            new MessageButton()
+                .setCustomId('nextPage')
+                .setLabel('Próxima página')
+                .setStyle('PRIMARY')
+                .setDisabled(!hasNextPage)
+        )
+    }
+
+    const getFields = (data) => {
+        let fields = []
+
+        data.forEach(currentData => {
+            let address = currentData.nome + ', ' + currentData.cidade.nome + ' - ' + currentData.cidade.estado.sigla
+
+            fields.push({
+                name: '\u200B',
+                value: address,
+                inline: true
+            })
+        })
+        return fields
+    }
+
     let message = async (msg, args) => {
         try {
             if (args.length > 0) {
+                // setup
                 let nomePais = ''
                 let nomeEstado = ''
                 let nomeCidade = ''
@@ -26,64 +66,43 @@ export default (() => {
                     }
                 })
     
+                // default Page Number
+                let pageNumber = 1
+
                 let responseLocalidades = await LocalidadesService.processLocalidades(
-                    nomePais, nomeEstado, nomeCidade, nomeBairro)
+                    nomePais, nomeEstado, nomeCidade, nomeBairro, pageNumber)
     
                 if (responseLocalidades.succeeded) {
                     let responseData = responseLocalidades.data
-    
-                    const embed = new MessageEmbed()
-    
-                    embed
-                        .setColor('#2484f3')
-                        .setTitle('Lista de localidades')
-                        .setURL('http://tupaweb.azurewebsites.net/')
-                        .setDescription('Aqui está a lista de alguns lugares com esse nomes. 😊')
-                        .setTimestamp()
+
+                    let embed = getTemplateEmbed()
                         .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
-    
-                    responseData.items.forEach(currentData => {
-                        let address = currentData.nome + ', ' + 
-                                      currentData.cidade.nome + ' - ' + 
-                                      currentData.cidade.estado.sigla
-    
-                        embed.addField(
-                            '\u200B',
-                            address,
-                            true
-                        )
+                        .addFields(getFields(responseData.items))
+
+                    const interactionMessage = await msg.reply({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+
+                    const collector = interactionMessage.createMessageComponentCollector({ time: 600000, componentType: "BUTTON" })
+
+                    collector.on('collect', async (i) => {
+                        if (i.customId === 'nextPage') pageNumber++
+                        else if (i.customId === 'previousPage') pageNumber--
+
+                        responseLocalidades = await LocalidadesService.processLocalidades(
+                            nomePais, nomeEstado, nomeCidade, nomeBairro, pageNumber)
+
+                        if (responseLocalidades.succeeded) {
+                            responseData = responseLocalidades.data
+
+                            embed = getTemplateEmbed()
+                                .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
+                                .addFields(getFields(responseData.items))
+
+                            await i.update({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+                        }
                     })
-    
-                    const row = new MessageActionRow()
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('previousPage')
-                                .setLabel('Página anterior')
-                                .setStyle('SECONDARY')
-                                .setDisabled(!responseData.hasPreviousPage))
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('nextPage')
-                                .setLabel('Próxima página')
-                                .setStyle('PRIMARY')
-                                .setDisabled(!responseData.hasNextPage))
-    
-                    return { embeds: [embed], components: [row] }
-                } else {
-                    return CustomMessages.ErrorMessage(
-                        'Parece que ocorreu um erro, tente novamente mais tarde. 😥', 
-                        CustomMessages.typeErrors.error)
                 }
             }
-    
-            return CustomMessages.ErrorMessage(
-                'É nescessário passar alguma informação.', 
-                CustomMessages.typeErrors.warning)
-        } catch {
-            return CustomMessages.ErrorMessage(
-                'Parece que ocorreu um erro, tente novamente mais tarde. 😥', 
-                CustomMessages.typeErrors.error)
-        }        
+        } catch { }        
     }  
     
     let help = () => {

@@ -36,7 +36,7 @@ import guildMemberRemove from './events/guildMemberRemove.js'
     })
 
     client.on('messageCreate', msg => messageCreate.callCommands(msg))
-    client.on('interactionCreate', interaction => interactionCreate.callCommands(interaction))
+    client.on('interactionCreate', interaction => interactionCreate.callMessages(interaction))
     client.on('guildMemberAdd', member => guildMemberAdd(member))
     client.on('guildMemberRemove', member => guildMemberRemove(member))
 
