@@ -16,7 +16,7 @@ export default (() => {
         let obj = await import(url.pathToFileURL(urlRoute))
 
         return obj.default
-    }  
+    }
 
     const AllCommandsWithPath = async () => {
         const fs = require('fs').promises
