@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="381" height="381" viewBox="0 0 381 381">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.031" y1="0.836" x2="0.887" y2="0.222" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f7faff"/>
+      <stop offset="0.669" stop-color="#e0e6ff"/>
+      <stop offset="1" stop-color="#e0e6ff"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Caminho_5047" data-name="Caminho 5047" d="M1617.936,496.134a75.066,75.066,0,0,0-74.872-75.065v0a75.067,75.067,0,0,0-150.135,0v0l-.2,0a75.067,75.067,0,1,0,0,150.134q.98,0,1.955-.025v.025h150.135v-.025A75.068,75.068,0,0,0,1617.936,496.134Z" transform="translate(-1317.667 -346)" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <ellipse id="Elipse_165" data-name="Elipse 165" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(130.393 6306)" fill="#2f005b"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <path id="Caminho_5326" data-name="Caminho 5326" d="M1617.936,496.134a75.066,75.066,0,0,0-74.872-75.065v0a75.067,75.067,0,0,0-150.135,0v0l-.2,0a75.067,75.067,0,1,0,0,150.134q.98,0,1.955-.025v.025h150.135v-.025A75.068,75.068,0,0,0,1617.936,496.134Z" transform="translate(-1365.495 5820.939)" fill="#fff" stroke="#2485f3" stroke-width="2"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <ellipse id="Elipse_169" data-name="Elipse 169" cx="14.5" cy="19.5" rx="14.5" ry="19.5" fill="#2f005b"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="Caminho_5329" data-name="Caminho 5329" d="M1317.667,496.134a75.066,75.066,0,0,1,74.872-75.065v0a75.067,75.067,0,0,1,150.135,0v0l.2,0a75.067,75.067,0,1,1,0,150.134q-.98,0-1.955-.025v.025H1390.779v-.025A75.068,75.068,0,0,1,1317.667,496.134Z" transform="translate(-1317.667 -346)" fill="#fff" stroke="#2485f3" stroke-width="2"/>
+    </clipPath>
+    <clipPath id="clip-path-6">
+      <path id="Caminho_5337" data-name="Caminho 5337" d="M-1165.12,6925.24s10.462-3.6,18.032-3.517,16.969,3.517,16.969,3.517,1.95-23.678-16.969-23.694S-1165.12,6925.24-1165.12,6925.24Z" transform="translate(1251.423 -552.293)" fill="#2f005b"/>
+    </clipPath>
+  </defs>
+  <g id="crying_mascot-square" transform="translate(90 -6147)">
+    <rect id="Retângulo_88" data-name="Retângulo 88" width="381" height="381" transform="translate(-90 6147)" fill="none"/>
+    <g id="Grupo_8056" data-name="Grupo 8056" transform="translate(-2.172 57.06)">
+      <g id="Grupo_7403" data-name="Grupo 7403" transform="translate(-47.828 6166.939)">
+        <g id="Grupo_7387" data-name="Grupo 7387" transform="translate(0 0)">
+          <g id="Grupo_7364" data-name="Grupo 7364" transform="translate(0)">
+            <g id="Grupo_7340" data-name="Grupo 7340" transform="translate(0 0)">
+              <g id="Grupo_7404" data-name="Grupo 7404" transform="translate(0 0)">
+                <path id="Caminho_4975" data-name="Caminho 4975" d="M1617.936,496.134a75.066,75.066,0,0,0-74.872-75.065v0a75.067,75.067,0,0,0-150.135,0v0l-.2,0a75.067,75.067,0,1,0,0,150.134q.98,0,1.955-.025v.025h150.135v-.025A75.068,75.068,0,0,0,1617.936,496.134Z" transform="translate(-1317.667 -346)" fill="#fff" stroke="#2485f3" stroke-width="2"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Grupo_de_máscara_1" data-name="Grupo de máscara 1" transform="translate(-47.241 6167.939)" clip-path="url(#clip-path)">
+        <path id="Caminho_4982" data-name="Caminho 4982" d="M5977.621-864.559a63.884,63.884,0,0,0-52.555-31.933,63.934,63.934,0,0,0-66.711,61.027" transform="translate(-5862.993 972.449)" fill="none" stroke="#f4f6ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+      </g>
+      <g id="Grupo_8041" data-name="Grupo 8041" transform="translate(-471.607 5972)">
+        <ellipse id="Elipse_156" data-name="Elipse 156" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(518 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_157" data-name="Elipse 157" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="matrix(0.995, -0.105, 0.105, 0.995, 531.29, 339.457)" fill="#fff"/>
+        <ellipse id="Elipse_158" data-name="Elipse 158" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(602 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_159" data-name="Elipse 159" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="matrix(-0.995, -0.105, 0.105, -0.995, 617.351, 356.385)" fill="#fff"/>
+        <g id="Grupo_8041-2" data-name="Grupo 8041" transform="translate(555.873 374.545)">
+          <path id="Caminho_5322" data-name="Caminho 5322" d="M-1165.12,6930.654s11.673-4.417,20.12-4.321,18.934,4.321,18.934,4.321,2.175-29.088-18.934-29.109S-1165.12,6930.654-1165.12,6930.654Z" transform="translate(1165.127 -6901.545)" fill="#2f005b"/>
+        </g>
+        <circle id="Elipse_161" data-name="Elipse 161" cx="4.5" cy="4.5" r="4.5" transform="matrix(0.995, -0.105, 0.105, 0.995, 524.29, 360.326)" fill="#fff"/>
+        <ellipse id="Elipse_162" data-name="Elipse 162" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(602 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_163" data-name="Elipse 163" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="matrix(-0.995, -0.105, 0.105, -0.995, 616.351, 352.385)" fill="#fff"/>
+        <circle id="Elipse_164" data-name="Elipse 164" cx="4.5" cy="4.5" r="4.5" transform="matrix(-0.995, -0.105, 0.105, -0.995, 625.769, 361.277)" fill="#fff"/>
+        <ellipse id="Elipse_166" data-name="Elipse 166" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(518 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_167" data-name="Elipse 167" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="translate(531.29 339.456) rotate(-6)" fill="#fff"/>
+        <ellipse id="Elipse_168" data-name="Elipse 168" cx="4.5" cy="4.5" rx="4.5" ry="4.5" transform="translate(522.29 352.326) rotate(-6)" fill="#fff"/>
+      </g>
+      <g id="Grupo_de_máscara_17" data-name="Grupo de máscara 17" clip-path="url(#clip-path-2)">
+        <path id="Caminho_5324" data-name="Caminho 5324" d="M124.655,6337.154a11.384,11.384,0,0,1,9.229-4.892c6.4-.179,5.881,4.287,16.351,4.177s14.782-12.369,14.782-12.369l24.016,19.71.947,38.028-61.7,2.051Z" fill="#60a8f9"/>
+      </g>
+      <g id="Grupo_de_máscara_18" data-name="Grupo de máscara 18" clip-path="url(#clip-path-3)">
+        <path id="Caminho_5325" data-name="Caminho 5325" d="M155.459,6338.84s-6.149,8.374.281,20.05,18.918,15.48,16.693,35.356-16.974,14.289-37.522,15.61c0,0-7.829-11.826-7.829-26.067s5.817-20.442,7.829-30.9-1.925-16.3-1.925-16.3Z" fill="#60a8f9"/>
+      </g>
+      <g id="Grupo_de_máscara_19" data-name="Grupo de máscara 19" transform="translate(46.388 6306)" clip-path="url(#clip-path-4)">
+        <path id="Caminho_5327" data-name="Caminho 5327" d="M189.98,6337.154a11.384,11.384,0,0,0-9.229-4.892c-6.4-.179-5.881,4.287-16.351,4.177s-14.782-12.369-14.782-12.369l-24.016,19.71-.947,38.028,61.7,2.051Z" transform="translate(-155.242 -6306)" fill="#60a8f9"/>
+      </g>
+      <g id="Grupo_de_máscara_20" data-name="Grupo de máscara 20" transform="translate(-46.66 6166.939)" clip-path="url(#clip-path-5)">
+        <path id="Caminho_5328" data-name="Caminho 5328" d="M144.319,6338.84s6.149,8.374-.281,20.05-18.918,15.48-16.693,35.356,16.974,14.289,37.522,15.61c0,0,7.829-11.826,7.829-26.067s-5.817-20.442-7.829-30.9,1.925-16.3,1.925-16.3Z" transform="translate(-47.336 -6166.939)" fill="#60a8f9"/>
+      </g>
+      <path id="Caminho_5333" data-name="Caminho 5333" d="M0,4.695S.3,1.776,8.734,1.6,17,4.695,17,4.695" transform="translate(155.497 6311.273) rotate(-169)" fill="#fff" stroke="#2f005b" stroke-linecap="round" stroke-width="2"/>
+      <path id="Caminho_5334" data-name="Caminho 5334" d="M0,0S.3,2.919,8.734,3.092,17,0,17,0" transform="matrix(0.982, -0.191, 0.191, 0.982, 49.249, 6307.232)" fill="#fff" stroke="#2f005b" stroke-linecap="round" stroke-width="2"/>
+      <path id="Caminho_5335" data-name="Caminho 5335" d="M35.915,6386.1a25.3,25.3,0,0,1,3.5-8.99,47.769,47.769,0,0,1,7.24-8.87" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <path id="Caminho_5336" data-name="Caminho 5336" d="M48.589,6385.491a18.018,18.018,0,0,0-1.726-4.689,33.832,33.832,0,0,0-3.472-4.778" transform="translate(121 -2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+      <g id="Grupo_de_máscara_21" data-name="Grupo de máscara 21" clip-path="url(#clip-path-6)">
+        <path id="Caminho_5338" data-name="Caminho 5338" d="M22.151,5.691c12.2,0,22.065-8.876,22.065-3.172s-9.862,18.22-22.065,18.22S.37,8.223.37,2.519,9.948,5.691,22.151,5.691Z" transform="translate(81.349 6361.63)" fill="#fe2258"/>
+      </g>
+    </g>
+  </g>
+</svg>

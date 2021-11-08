@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="381" height="381" viewBox="0 0 381 381">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.031" y1="0.836" x2="0.887" y2="0.222" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f7faff"/>
+      <stop offset="0.669" stop-color="#e0e6ff"/>
+      <stop offset="1" stop-color="#e0e6ff"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Caminho_5047" data-name="Caminho 5047" d="M1617.936,496.134a75.066,75.066,0,0,0-74.872-75.065v0a75.067,75.067,0,0,0-150.135,0v0l-.2,0a75.067,75.067,0,1,0,0,150.134q.98,0,1.955-.025v.025h150.135v-.025A75.068,75.068,0,0,0,1617.936,496.134Z" transform="translate(-1317.667 -346)" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Caminho_5323" data-name="Caminho 5323" d="M-1165.121,6901.545s9.758,3.692,16.818,3.612,15.827-3.612,15.827-3.612,1.818,24.315-15.827,24.333S-1165.121,6901.545-1165.121,6901.545Z" transform="translate(1723.337 -6524.612)" fill="#2f005b" stroke="#707070" stroke-width="141"/>
+    </clipPath>
+  </defs>
+  <g id="happy_mascot_square" transform="translate(-1034 -2875)">
+    <rect id="Retângulo_88" data-name="Retângulo 88" width="381" height="381" transform="translate(1034 2875)" fill="none"/>
+    <g id="Grupo_8057" data-name="Grupo 8057" transform="translate(-2.172 57.06)">
+      <g id="Grupo_7403" data-name="Grupo 7403" transform="translate(1076.172 2894.939)">
+        <g id="Grupo_7387" data-name="Grupo 7387" transform="translate(0 0)">
+          <g id="Grupo_7364" data-name="Grupo 7364" transform="translate(0)">
+            <g id="Grupo_7340" data-name="Grupo 7340" transform="translate(0 0)">
+              <g id="Grupo_7404" data-name="Grupo 7404" transform="translate(0 0)">
+                <path id="Caminho_4975" data-name="Caminho 4975" d="M1617.936,496.134a75.066,75.066,0,0,0-74.872-75.065v0a75.067,75.067,0,0,0-150.135,0v0l-.2,0a75.067,75.067,0,1,0,0,150.134q.98,0,1.955-.025v.025h150.135v-.025A75.068,75.068,0,0,0,1617.936,496.134Z" transform="translate(-1317.667 -346)" fill="#fff" stroke="#2485f3" stroke-width="2"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Grupo_de_máscara_1" data-name="Grupo de máscara 1" transform="translate(1076.759 2895.939)" clip-path="url(#clip-path)">
+        <path id="Caminho_4982" data-name="Caminho 4982" d="M5977.621-864.559a63.884,63.884,0,0,0-52.555-31.933,63.934,63.934,0,0,0-66.711,61.027" transform="translate(-5862.993 972.449)" fill="none" stroke="#f4f6ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+      </g>
+      <g id="Grupo_8041" data-name="Grupo 8041" transform="translate(652.393 2700)">
+        <ellipse id="Elipse_156" data-name="Elipse 156" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(518 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_157" data-name="Elipse 157" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="matrix(0.995, -0.105, 0.105, 0.995, 530.29, 343.457)" fill="#fff"/>
+        <ellipse id="Elipse_158" data-name="Elipse 158" cx="14.5" cy="19.5" rx="14.5" ry="19.5" transform="translate(602 334)" fill="#2f005b"/>
+        <ellipse id="Elipse_159" data-name="Elipse 159" cx="4.5" cy="6.5" rx="4.5" ry="6.5" transform="matrix(-0.995, -0.105, 0.105, -0.995, 617.351, 356.385)" fill="#fff"/>
+        <g id="Grupo_8041-2" data-name="Grupo 8041" transform="translate(-38 -3)">
+          <path id="Caminho_5322" data-name="Caminho 5322" d="M-1165.12,6901.545s11.673,4.417,20.12,4.321,18.934-4.321,18.934-4.321,2.175,29.088-18.934,29.109S-1165.12,6901.545-1165.12,6901.545Z" transform="translate(1759 -6524)" fill="#2f005b"/>
+          <g id="Grupo_de_máscara_16" data-name="Grupo de máscara 16" transform="translate(39 3)" clip-path="url(#clip-path-2)">
+            <ellipse id="Elipse_160" data-name="Elipse 160" cx="26" cy="12" rx="26" ry="12" transform="translate(549 388)" fill="#fe2258"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
