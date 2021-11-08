@@ -55,15 +55,10 @@ export default (() => {
                 let nomeBairro = ''
     
                 args.forEach(current => {
-                    if (current.name == 'bairro') {
-                        nomeBairro = current != null ? current.value : ''
-                    } else if (current.name == 'cidade') {
-                        nomeCidade = current != null ? current.value : ''
-                    } else if (current.name == 'estado') {
-                        nomeEstado = current != null ? current.value : ''
-                    } else if (current.name == 'pais') {
-                        nomePais = current != null ? current.value : ''
-                    }
+                    if (current.name == 'bairro') nomeBairro = current != null ? current.value : ''
+                    else if (current.name == 'cidade') nomeCidade = current != null ? current.value : ''
+                    else if (current.name == 'estado') nomeEstado = current != null ? current.value : ''
+                    else if (current.name == 'pais') nomePais = current != null ? current.value : ''
                 })
     
                 // default Page Number

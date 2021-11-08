@@ -5,94 +5,117 @@ import CustomMessages from '../../common/CustomMessages.js'
 import { MessageActionRow, MessageButton, MessageEmbed } from 'discord.js'
 
 export default (() => {   
+
+    const getTemplateEmbed = () => {
+        return new MessageEmbed()
+            .setColor('#2484f3')
+            .setTitle('Lista de alertas')
+            .setURL('http://tupaweb.azurewebsites.net/')
+            .setDescription('Aqui está a lista de alguns alertas encontrados. 😊')
+            .setTimestamp()
+    }
+
+    const getButtons = (hasPreviousPage, hasNextPage) => {
+        return new MessageActionRow().addComponents(
+            new MessageButton()
+                .setCustomId('previousPageAlerts')
+                .setLabel('Página anterior')
+                .setStyle('SECONDARY')
+                .setDisabled(!hasPreviousPage),
+            new MessageButton()
+                .setCustomId('nextPageAlerts')
+                .setLabel('Próxima página')
+                .setStyle('PRIMARY')
+                .setDisabled(!hasNextPage)
+        )
+    }
+
+    const getFields = (data) => {
+        let fields = []
+
+        data.forEach(currentData => {
+            fields.push({
+                name: currentData.distrito.nome,
+                value: currentData.descricao,
+                inline: true
+            })
+
+            let o = new Intl.DateTimeFormat('pt-BR', { 
+                timeStyle: 'short'
+            })
+            
+            fields.push({
+                name: `${ o.format(new Date(currentData.tempoInicio)) } - ${ o.format(new Date(currentData.tempoFinal)) }`,
+                value: '\u200B',
+                inline: true
+            })
+
+            fields.push({
+                name: '\u200B',
+                value: '\u200B',
+                inline: true
+            })
+        })
+
+        return fields
+    }
+
     let message = async (msg, args) => {
         try {
             if (args.length > 0) {
                 let nomeBairro = ''
     
                 args.forEach(current => {
-                    if (current.name == 'bairro') {
-                        nomeBairro = current != null ? current.value : ''
-                    }
+                    if (current.name == 'bairro') nomeBairro = current != null ? current.value : ''
                 })
     
+                // default Page Number
+                let pageNumber = 1
+
                 let responseAlerts
     
-                if (nomeBairro == '') {
+                if (nomeBairro == '')
                     responseAlerts = await AlertsService.processAlerts(
                         args[0].value, args[1].value, args[2].value)
-                } else {
+                else
                     responseAlerts = await AlertsService.processAlertsByDistrict(
                         args[0].value, args[1].value, args[2].value, nomeBairro)
-                }
     
                 if (responseAlerts.succeeded) {
                     let responseData = responseAlerts.data
     
-                    const embed = new MessageEmbed()
-    
-                    embed
-                        .setColor('#2484f3')
-                        .setTitle('Lista de alertas')
-                        .setURL('http://tupaweb.azurewebsites.net/')
-                        .setDescription('Aqui está a lista de alguns alertas encontrados. 😊')
-                        .setTimestamp()
+                    let embed = getTemplateEmbed()
                         .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
+                        .addFields(getFields(responseData.items))
     
-                    responseData.items.forEach(currentData => {
-                        embed.addField(
-                            currentData.distrito.nome,
-                            currentData.descricao,
-                            true
-                        )
-    
-                        let o = new Intl.DateTimeFormat('pt-BR', { 
-                            timeStyle: 'short'
-                        })
-    
-                        embed.addField(
-                            `${ o.format(new Date(currentData.tempoInicio)) } - ${ o.format(new Date(currentData.tempoFinal)) }`,
-                            '\u200B',
-                            true
-                        )
-    
-                        embed.addField(
-                            '\u200B',
-                            '\u200B',
-                            true
-                        )
+                    const interactionMessage = await msg.reply({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+
+                    const collector = interactionMessage.createMessageComponentCollector({ time: 600000, componentType: "BUTTON" })
+
+                    collector.on('collect', async (i) => {
+                        if (i.customId === 'nextPageAlerts') pageNumber++
+                        else if (i.customId === 'previousPageAlerts') pageNumber--
+
+                        if (nomeBairro == '') 
+                            responseAlerts = await AlertsService.processAlerts(
+                                args[0].value, args[1].value, args[2].value, pageNumber)
+                        else 
+                            responseAlerts = await AlertsService.processAlertsByDistrict(
+                                args[0].value, args[1].value, args[2].value, nomeBairro, pageNumber)
+
+                        if (responseAlerts.succeeded) {
+                            responseData = responseAlerts.data
+
+                            embed = getTemplateEmbed()
+                                .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
+                                .addFields(getFields(responseData.items))
+
+                            await i.update({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+                        }
                     })
-    
-                    const row = new MessageActionRow()
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('previousPageAlerts')
-                                .setLabel('Página anterior')
-                                .setStyle('SECONDARY')
-                                .setDisabled(!responseData.hasPreviousPage))
-                        .addComponents(
-                            new MessageButton()
-                                .setCustomId('nextPageAlerts')
-                                .setLabel('Próxima página')
-                                .setStyle('PRIMARY')
-                                .setDisabled(!responseData.hasNextPage))
-    
-                    return { embeds: [embed], components: [row] }
-                } else {
-                    return CustomMessages.ErrorMessage(
-                        'Parece que ocorreu um erro, tente novamente mais tarde. 😥', 
-                        CustomMessages.typeErrors.error)
                 }
-            } else {
-                return CustomMessages.ErrorMessage(
-                    'É nescessário passar alguma informação.', 
-                    CustomMessages.typeErrors.warning)
             }
-        } catch {
-            return CustomMessages.ErrorMessage(
-                'Parece que ocorreu um erro, tente novamente mais tarde. 😥', 
-                CustomMessages.typeErrors.error)
-        }
+        } catch { }
     }  
     
     let help = () => {
