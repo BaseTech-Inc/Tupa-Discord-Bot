@@ -25,12 +25,11 @@ export default (() => {
             })
 
             let responseLocalidades = await LocalidadesService.processLocalidades(
-                nomePais, 
-                nomeEstado, 
-                nomeCidade, 
-                nomeBairro)
+                nomePais, nomeEstado, nomeCidade, nomeBairro)
 
             if (responseLocalidades.succeeded) {
+                let responseData = responseLocalidades.data
+
                 const embed = new MessageEmbed()
 
                 embed
@@ -38,29 +37,19 @@ export default (() => {
                     .setTitle('Lista de localidades')
                     .setURL('http://tupaweb.azurewebsites.net/')
                     .setTimestamp()
-	                .setFooter('5/' + responseLocalidades.data.length);
+	                .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
 
-                let count = 1
+                responseData.items.forEach(currentData => {
+                    let address = currentData.nome + ', ' + 
+                                  currentData.cidade.nome + ' - ' + 
+                                  currentData.cidade.estado.sigla
 
-                responseLocalidades.data.forEach(currentData => {
-                    if (count < 7) {
-                        let address = responseLocalidades.data[count].nome + ', ' + responseLocalidades.data[count].cidade.nome + ' - ' + responseLocalidades.data[count].cidade.estado.sigla
-
-                        embed.addField(
-                            '\u200B',
-                            address,
-                            true
-                        )
-                    }
-
-                    count++
+                    embed.addField(
+                        '\u200B',
+                        address,
+                        true
+                    )
                 })
-
-                embed.addField(
-                    '\u200B',
-                    '\u200B',
-                    false
-                )
 
                 const row = new MessageActionRow()
                     .addComponents(
@@ -68,12 +57,13 @@ export default (() => {
                             .setCustomId('previousPage')
                             .setLabel('Página anterior')
                             .setStyle('SECONDARY')
-                            .setDisabled(true))
+                            .setDisabled(!responseData.hasPreviousPage))
                     .addComponents(
                         new MessageButton()
                             .setCustomId('nextPage')
                             .setLabel('Próxima página')
-                            .setStyle('PRIMARY'))
+                            .setStyle('PRIMARY')
+                            .setDisabled(!responseData.hasNextPage))
 
                 return { embeds: [embed], components: [row] }
             } else {

@@ -15,7 +15,7 @@ export default (() => {
             }
         }
 
-        let url = baseUrl + 'api/v1/Localidades' + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }`
+        let url = baseUrl + 'api/v1/Localidades/pagination' + `?namePais=${ pais }&nameEstado=${ estado }&nameCidade=${ cidade }&nameDistrito=${ bairro }&PageSize=6`
 
         const response = await fetch(url, options)
         const json = await response.json()
