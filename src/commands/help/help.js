@@ -61,9 +61,9 @@ export default (() => {
         }
 
         if (embed.title == null && embed.description == null) 
-            return { content: 'Ocorreu um erro, tente novamente mais tarde. 😥' }
+            msg.reply({ content: 'Ocorreu um erro, tente novamente mais tarde. 😥' })
 
-        return { embeds: [embed] }
+        msg.reply({ embeds: [embed] })
     }  
     
     let help = () => {

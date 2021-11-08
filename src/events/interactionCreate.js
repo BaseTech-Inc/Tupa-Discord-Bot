@@ -25,10 +25,7 @@ export default (() => {
                     })
                 }
 
-                current.message(interaction, args)
-                    .then(async message => {
-                        
-                    })                
+                current.message(interaction, args)                
             }
         })
     }

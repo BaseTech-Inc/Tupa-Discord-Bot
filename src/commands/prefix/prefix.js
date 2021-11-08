@@ -19,19 +19,19 @@ export default (() => {
                 let prefix = await insert(table(sequelize), guildId, args[0])
 
                 if (prefix != null) {
-                    return { content: 'Prefixo trocado com sucesso. 😀' }
+                    msg.reply({ content: 'Prefixo trocado com sucesso. 😀' })
                 }
             } else {
                 let prefix = await edit(table(sequelize), guildId, args[0])
 
                 if (prefix) {
-                    return { content: 'Prefixo trocado com sucesso. 😀' }
+                    msg.reply({ content: 'Prefixo trocado com sucesso. 😀' })
                 }
             }  
 
-            return { content: 'Ocorreu um erro, tente novamente mais tarde. 😥' }
+            msg.reply({ content: 'Ocorreu um erro, tente novamente mais tarde. 😥' })
         } else {
-            return { content: 'É nescessário passar a letra para o prefixo.' }
+            msg.reply({ content: 'É nescessário passar a letra para o prefixo.' })
         }
     }  
     

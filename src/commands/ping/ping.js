@@ -3,7 +3,7 @@
 export default (() => {   
 
     let message = async (msg) => {
-        return { content: 'Pong!' }
+        msg.reply({ content: 'Pong!' }) 
     }  
     
     let help = () => {
