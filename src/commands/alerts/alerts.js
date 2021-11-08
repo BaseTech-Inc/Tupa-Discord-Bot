@@ -34,6 +34,7 @@ export default (() => {
                     .setColor('#2484f3')
                     .setTitle('Lista de alertas')
                     .setURL('http://tupaweb.azurewebsites.net/')
+                    .setDescription('Aqui está a lista de alguns alertas encontrados. 😊')
                     .setTimestamp()
 	                .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
 
@@ -44,8 +45,12 @@ export default (() => {
                         true
                     )
 
+                    let o = new Intl.DateTimeFormat('pt-BR', { 
+                        timeStyle: 'short'
+                    })
+
                     embed.addField(
-                        '15:59 - 16:38',
+                        `${ o.format(new Date(currentData.tempoInicio)) } - ${ o.format(new Date(currentData.tempoFinal)) }`,
                         '\u200B',
                         true
                     )

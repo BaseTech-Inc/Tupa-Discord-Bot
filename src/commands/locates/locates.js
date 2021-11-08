@@ -36,6 +36,7 @@ export default (() => {
                     .setColor('#2484f3')
                     .setTitle('Lista de localidades')
                     .setURL('http://tupaweb.azurewebsites.net/')
+                    .setDescription('Aqui está a lista de alguns lugares com esse nomes. 😊')
                     .setTimestamp()
 	                .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
 
