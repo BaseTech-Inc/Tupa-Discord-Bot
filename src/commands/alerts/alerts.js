@@ -83,6 +83,14 @@ export default (() => {
     
                 if (responseAlerts.succeeded) {
                     let responseData = responseAlerts.data
+
+                    if (responseData.items.length <= 0) {
+                        msg.reply(CustomMessages.ErrorMessage(
+                            'Não foi possível encontrar nenhum alerta nesse dia, por enquanto...',
+                            CustomMessages.typeErrors.warning))
+
+                        return
+                    }
     
                     let embed = getTemplateEmbed()
                         .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
@@ -111,11 +119,17 @@ export default (() => {
                                 .addFields(getFields(responseData.items))
 
                             await i.update({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+                        } else {
+                            console.warn('warn: ' + responseAlerts.message)
                         }
                     })
+                } else {
+                    console.warn('warn: ' + responseAlerts.message)
                 }
             }
-        } catch { }
+        } catch (error) { 
+            console.error('error:' + error)
+        }
     }  
     
     let help = () => {

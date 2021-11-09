@@ -42,6 +42,7 @@ export default (() => {
                 inline: true
             })
         })
+        
         return fields
     }
 
@@ -70,6 +71,14 @@ export default (() => {
                 if (responseLocalidades.succeeded) {
                     let responseData = responseLocalidades.data
 
+                    if (responseData.items.length <= 0) {
+                        msg.reply(CustomMessages.ErrorMessage(
+                            'Não foi possível encontrar nenhuma localidade com essas credenciais...',
+                            CustomMessages.typeErrors.warning))
+
+                        return
+                    }
+
                     let embed = getTemplateEmbed()
                         .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
                         .addFields(getFields(responseData.items))
@@ -93,11 +102,17 @@ export default (() => {
                                 .addFields(getFields(responseData.items))
 
                             await i.update({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+                        } else {
+                            console.warn('warn: ' + responseAlerts.message)
                         }
                     })
+                } else {
+                    console.warn('warn: ' + responseAlerts.message)
                 }
             }
-        } catch { }        
+        } catch (error) { 
+            console.error('error:' + error)
+        }       
     }  
     
     let help = () => {
