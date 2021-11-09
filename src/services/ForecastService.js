@@ -6,7 +6,7 @@ import Authenticate from '../services/AccountService.js'
 
 export default (() => {   
 
-    const processClimateByName = async (district, city, state) => {
+    const processForecastByName = async (district, city, state) => {
         let bearerToken = await Authenticate.getBearerToken()
 
         const options = {
@@ -16,7 +16,7 @@ export default (() => {
             }
         }
 
-        let url = baseUrl + 'api/v1/CurrentWeather/name' + `?district=${ district }&city=${ city }&state=${ state }`
+        let url = baseUrl + 'api/v1/Forecast/name' + `?district=${ district }&city=${ city }&state=${ state }`
 
         const response = await fetch(url, options)
         const json = await response.json()
@@ -25,7 +25,7 @@ export default (() => {
     }
 
     return {
-        processClimateByName
+        processForecastByName
     }
     
 })()

@@ -100,7 +100,7 @@ export default (() => {
                     
                     msg.reply({ embeds: [embed], files: [file] }) 
                 } else {
-                    console.warn('warn: ' + responseData.message)
+                    console.warn('warn: ' + responseClimate.message)
                 }
             }
         } catch (error) { 
