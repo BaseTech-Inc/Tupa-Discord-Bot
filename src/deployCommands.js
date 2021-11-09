@@ -55,8 +55,8 @@ export default async () => {
 
         commands.map(command => command.toJSON())
         rest.put(
-            Routes.applicationCommands(process.env.CLIENTID), { body: commands }
-            /*Routes.applicationGuildCommands(process.env.CLIENTID, ''), { body: commands }*/
+            /*Routes.applicationCommands(process.env.CLIENTID), { body: commands }*/
+            Routes.applicationGuildCommands(process.env.CLIENTID, '798068715139891221'), { body: commands }
             )
         .then(() => console.log('Successfully reloaded application (/) commands.'))
         .catch(console.error)

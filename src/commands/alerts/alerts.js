@@ -143,7 +143,7 @@ export default (() => {
                 { type: 'int', name: 'dia', description: "Dia", required: true },
                 { type: 'string', name: 'bairro', description: "Nome do bairro" },
             ],
-            category: 'alerts'
+            category: 'search'
         })
     }
 
