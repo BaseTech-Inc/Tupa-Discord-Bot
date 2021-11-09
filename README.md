@@ -10,6 +10,8 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
+- [ ] Adicionar canal para atualização em tempo real dos alertas
+
 ## Começando
 
 ### Instalando localmente projeto
@@ -20,7 +22,6 @@ $ git clone https://github.com/BaseTech-Inc/Tupa-Discord-Bot.git
 ```
 
 ### Configurando ambiente
-
 
 - Para este projeto é necessário ter instalado em sua maquina o <a href="https://nodejs.org/en/">NodeJs</a>.
 
