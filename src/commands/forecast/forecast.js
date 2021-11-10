@@ -118,7 +118,7 @@ export default (() => {
                         .setTimestamp()
                         .setImage(`attachment://output.png`)
                     
-                    msg.reply({ embeds: [embed], files: [sfattach] }) 
+                    await msg.reply({ embeds: [embed], files: [sfattach], fetchReply: true }) 
                 } else {
                     console.warn('warn: ' + responseForecast.message)
                 }
