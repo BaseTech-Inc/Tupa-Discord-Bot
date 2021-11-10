@@ -1,0 +1,22 @@
+.container_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.flex {
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 12rem;
+    margin-bottom: 1rem;
+}

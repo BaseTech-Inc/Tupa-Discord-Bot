@@ -1,0 +1,132 @@
+/* text */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title_font);
+    font-weight: var(--semi_bold_font);
+
+    color: var(--high_emphasis_color);
+}
+
+h1 {
+    font-size: var(--h1_font_size);
+}
+
+h2 {
+    font-size: var(--h2_font_size);
+}
+
+h3 {
+    font-size: var(--h3_font_size);
+}
+
+h4 {
+    font-size: var(--h4_font_size);
+}
+
+p,
+a,
+li,
+span,
+input,
+label,
+textarea {
+    font-family: var(--body_font);
+    font-size: var(--body_font_size);
+    line-height: 22px;
+
+    color: var(--medium_emphasis_color);
+}
+
+.caption {
+    font-size: var(--caption_font_size);
+}
+
+.bold {
+    font-weight: var(--semi_bold_font);
+    color: var(--high_emphasis_color);
+}
+
+.link:hover {
+    color: var(--primary-variant-color);
+    text-decoration: underline;
+}
+
+.land__link {
+    color: var(--primary-variant-color);
+    font-weight: 700;
+    border-bottom: 1px solid var(--primary-variant-color);
+    cursor: pointer;
+    text-decoration: none
+}
+
+.primary-button {
+    background: var(--surface_color_variant);
+    border: 1px solid var(--primary-variant-color);
+    color: var(--primary-variant-color);
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: .2s ease-in-out;
+    text-decoration: none;
+}
+
+.primary-button:focus {
+    box-shadow: rgba(59, 145, 243, 45%) 0 0 0 3px !important;
+}
+
+.secondary-button {
+    background: var(--primary-variant-color);
+    border: 1px solid var(--border-variant-color);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: .2s ease-in-out;
+    outline: none;
+    text-decoration: none;
+}
+
+.secondary-button:hover {
+    background: var(--primary-color);
+}
+
+.secondary-button:focus {
+    box-shadow: rgba(59, 145, 243, 45%) 0 0 0 3px !important;
+}
+
+.tag {
+    color: #ffffff;
+    padding: 4px 6px;
+    background: var(--primary-variant-color);
+    border-radius: 16px;
+    border: 1px solid var(--primary-variant-color);
+    box-shadow: 0 3px 6px var(--shadow-primary-color);  
+}
+
+/* content */
+
+body {
+    min-height: 100vh;
+    background-color: var(--background_color);
+    
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container_wrapper {
+    max-width: 1280px;
+    padding: 0 12px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--surface_color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 3px 6px var(--shadow-variant-color);    
+}

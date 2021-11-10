@@ -1,0 +1,84 @@
+:root {
+    /* breakpoints */
+    --phone_breakpoint: 320px;
+    --tablet_breakpoint: 600px;
+    --laptop_breakpoint: 960px;
+    --desktop_breakpoint: 1280px;
+
+    /* font-size */
+    --title_font: 'Montserrat', sans-serif;
+    --body_font: 'Open Sans', sans-serif;
+    
+    --h1_font_size: 1.5rem;
+    --h2_font_size: 1.25rem;
+    --h3_font_size: 1rem;
+    --h4_font_size: 0.93rem;
+    --body_font_size: 0.93rem;
+    --body_2_font_size: 0.875rem;
+    --caption_font_size: 0.68rem;
+
+    /* font weight */
+    --regular_font: 400;
+    --semi_bold_font: 600;
+}
+
+/* white theme */
+body,
+body[data-theme='white'] {
+    /* color schema */
+    --primary-color: #2485F3;
+    --primary-variant-color: #3B91F3;
+    --shadow-primary-color: #E4F0FE;
+    --shadow-variant-color: #EDEFF1;
+    --background_color: #F7F9FB;
+    --surface_color: #FFFFFF;
+    --surface_color_variant: #F7F9FB;
+    --error_color: #B00020;
+    --border-color: #D9DBDD;
+    --border-variant-color: #1F72D1;
+
+    /* emphasis */
+    --high_emphasis_color: #000000;
+    --medium_emphasis_color: #666666;
+    --disabled-color: #9E9E9E;  
+}
+
+/* dark dimmed theme */
+body[data-theme='dark'] {
+    /* color schema */
+    --primary-color: #2485F3;
+    --primary-variant-color: #3B91F3;
+    --shadow-primary-color: #09213B;
+    --shadow-variant-color: #202020;
+    --background_color: #010101;
+    --surface_color: #292929;
+    --surface_color_variant: #333333;
+    --error_color: #E74C3C;
+    --border-color: #434343;
+    --border-variant-color: #1F72D1;
+
+    /* emphasis */
+    --high_emphasis_color: #E0E0E0;
+    --medium_emphasis_color: #A0A0A0;
+    --disabled-color: #6C6C6C;  
+}
+
+/* dark dimmed theme */
+body[data-theme='dark_dimmed'] {
+    /* color schema */
+    --primary-color: #2485F3;
+    --primary-variant-color: #3B91F3;
+    --shadow-primary-color: #24313E;
+    --shadow-variant-color: #24313E;
+    --background_color: #1B2936;
+    --surface_color: #233446;
+    --surface_color_variant: #2E3E4F;
+    --error_color: #E74C3C;
+    --border-color: #37434E;
+    --border-variant-color: #1F72D1;
+
+    /* emphasis */
+    --high_emphasis_color: #E6E7E9;
+    --medium_emphasis_color: #A4A9AF;
+    --disabled-color: #727A83;  
+}
