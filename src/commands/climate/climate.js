@@ -28,6 +28,8 @@ export default (() => {
     let message = async (msg, args) => {
         try {
             if (args.length > 0) {
+                await msg.deferReply()
+
                 let nomeBairro = ''
                 let nomeCidade = ''
                 let nomeEstado = ''
@@ -47,7 +49,7 @@ export default (() => {
                     let responseData = responseClimate.data
 
                     if (responseData.q === ', ') {
-                        msg.reply(CustomMessages.ErrorMessage(
+                        await msg.editReply(CustomMessages.ErrorMessage(
                             'Especifique melhor a pesquisa.',
                             CustomMessages.typeErrors.warning))
 
@@ -70,7 +72,6 @@ export default (() => {
                             case "10":
                                 return "rain"
                             case "11": return "thunderstorm"
-                            case "13": return "snow"
                             default: return "clear_sky"
                         }
                     }
@@ -98,7 +99,7 @@ export default (() => {
                         .setTimestamp()
                         .setThumbnail(`attachment://${ nameImage }`)
                     
-                    msg.reply({ embeds: [embed], files: [file] }) 
+                    await msg.editReply({ embeds: [embed], files: [file] }) 
                 } else {
                     console.warn('warn: ' + responseClimate.message)
                 }

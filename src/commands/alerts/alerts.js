@@ -63,6 +63,8 @@ export default (() => {
     let message = async (msg, args) => {
         try {
             if (args.length > 0) {
+                await msg.deferReply()
+                
                 let nomeBairro = ''
     
                 args.forEach(current => {
@@ -85,7 +87,7 @@ export default (() => {
                     let responseData = responseAlerts.data
 
                     if (responseData.items.length <= 0) {
-                        msg.reply(CustomMessages.ErrorMessage(
+                        await msg.editReply(CustomMessages.ErrorMessage(
                             'Não foi possível encontrar nenhum alerta nesse dia, por enquanto...',
                             CustomMessages.typeErrors.warning))
 
@@ -96,7 +98,7 @@ export default (() => {
                         .setFooter(`${ responseData.pageIndex }/${ responseData.totalPages }`)
                         .addFields(getFields(responseData.items))
     
-                    const interactionMessage = await msg.reply({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
+                    const interactionMessage = await msg.editReply({ embeds: [embed], components: [getButtons(responseData.hasPreviousPage, responseData.hasNextPage)], fetchReply: true })
 
                     const collector = interactionMessage.createMessageComponentCollector({ time: 600000, componentType: "BUTTON" })
 

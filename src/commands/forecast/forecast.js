@@ -12,6 +12,8 @@ export default (() => {
     let message = async (msg, args) => {
         try {
             if (args.length > 0) {
+                await msg.deferReply()
+
                 let nomeBairro = ''
                 let nomeCidade = ''
                 let nomeEstado = ''
@@ -118,7 +120,7 @@ export default (() => {
                         .setTimestamp()
                         .setImage(`attachment://output.png`)
                     
-                    await msg.reply({ embeds: [embed], files: [sfattach], fetchReply: true }) 
+                    await msg.editReply({ embeds: [embed], files: [sfattach]}) 
                 } else {
                     console.warn('warn: ' + responseForecast.message)
                 }
